@@ -12,7 +12,7 @@ set(texDir "tex")
 set(styDir "sty")
 set(imgDir "img")
 
-#set(subProjects "")
+set(subProjects "util")
 #set(styleFiles "")
 
 set(includeList 

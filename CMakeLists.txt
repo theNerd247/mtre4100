@@ -39,7 +39,10 @@ set(subProjects "Octave")
 # the internal subprojecs. NOTE: include these subprojects in the order that
 # they depend on each other. For example, if proj1 depends on proj2 list proj2
 # BEFORE proj1
-set(internalSubDirs "lab1")
+set(internalSubDirs 
+	"util"
+	"lab1"
+	)
 
 # DO NOT REMOVE OR MODIFY
 BuildProject(
