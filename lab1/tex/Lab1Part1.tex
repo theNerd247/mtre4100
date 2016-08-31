@@ -1,0 +1,24 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+	\section[Lab Development]{Lab Development}
+	\subsection[First Order Analysis]{First Order Analysis}
+	
+	First order analysis begins by analyzing a simple lowpass Butterworth filter shown in the next figure.
+	%butterworth diagram here?
+	\\
+	The voltage drop across the resistor is given by the equation
+	\[v_{r} = iR\] and the current across the capactitor is 
+	\[i_{c} = C \frac{d v_{c}}{dt}\]
+	\\Kirchoff's voltage law is expressed as
+	\[v_{0} = v_{r} + v_{c}\]
+	\\
+	Substituting the first two equation into the third results in the following differential equation
+	\[v_{0} = RC \frac{d v_{1}}{dt} + v_{1}\]
+	\\where the constant \(RC\) is the time constant and has units of seconds as demonstrated.
+	
+	
+	\[RC = (\frac{Mass * Length^2}{Time^2 * Current^2} )(\frac{Time^4 * Current^2}{Mass * Length^2}) = Time\]
+	\\
+	For the case of \(R = 100\Omega\) and \(C = 0.1061 mF\) the time constant, \(RC = 10.61 ms\). For the case of \(R=50\Omega\) and \(C=0.1061mF\) the time constant \(RC=5.305ms\).
+	
+\end{document}

@@ -10,3 +10,11 @@ cmake/modulartex
 *.sw*
 
 *.zip
+*.pdf
+*.dvi
+*.log
+*.aux
+*.lof
+*.lot
+*.synctex.gz
+*.toc
