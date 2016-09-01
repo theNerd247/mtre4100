@@ -44,16 +44,32 @@ textbook):
 	V_C(t) = \left. V_s(1 - e^{\frac{-t}{\tau}}) \right| \tau = RC \label{eq:fo_Vc}
 \end{align}
 The constant $\tau$ is known as the time constant and has the property of.
-$V_c(\tau) = (0.632)V_s$.
+$V_c(\tau) = (0.632)V_s$. Indeed we can see that the time constant $\tau$ has
+units of time: 
+
+	\[RC = (\frac{[M] * [L]^2}{[T]^2 * I^2} )(\frac{[T]^4 * [I]^2}{[M] * [L]^2}) = [T]\]
+
+\subsection{Experimental Analysis}
+
+The lab "experiment" was conducted using LabView. First, a signal generator
+block was placed and configured to produce a 1Hz square wave. The generator
+output was then connected to a filter block configured to simulate a first order
+lowpass Butterworth filter with a cutoff frequency of 30 Hz. Finally, both the
+output of the signal generator and the output of the filter were connected to a
+graph block so both the original and filtered waves could be seen.
 
 % subsection background (end)
 
-\subsection{Analytical Time Constants} 
-\label{sec:analytical_time_constants}
-
 \tabref{fo_a_taus} shows the theoretical resistor and capacitor values along
 with their theoretical time constant values and their corresponding experimental
-contants.
+contants. As seen the percent-error in for both time constant values are less
+than $10\%$ - which, simply stated, means that the \Labview model and our
+mathematical model agree with eachother. Assuming the theoretical model is an
+accurate representation of the system we find then that \Labview is a good
+enough simulator for modeling realworld first order ODE systems. One must note
+however that if the frequency of the wave generator is to high (smaller than the
+system's time constant) then the system will never settle to it's steady state
+value, and possibly not even reach the proper rise time.
 
 \begin{table}[H]
   \begin{center}
