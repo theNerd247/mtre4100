@@ -17,6 +17,7 @@ set(subProjects "util")
 #set(styleFiles "")
 
 set(includeList 
+	"data"
 	"tex"
 	"sty"
 	"img"
