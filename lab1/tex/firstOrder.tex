@@ -13,9 +13,9 @@ from the Butterworth filter circuit as shown in \figref{foCircuit}.
 
 \begin{figure}[H]
 	\begin{center}
-		%\includegraphics[draft=true]{foCircuit}
+		\includegraphics{foCircuit}
 	\end{center}
-	\caption{First Order Butterworth Filter}
+	\caption{First Order Butterworth Filter (graphic taken from lab manual)}
 	\label{fig:foCircuit}
 \end{figure}
 
@@ -48,26 +48,34 @@ $V_c(\tau) = (0.632)V_s$.
 
 % subsection background (end)
 
-\section{Analytical Time Constants} 
+\subsection{Analytical Time Constants} 
 \label{sec:analytical_time_constants}
 
 \tabref{fo_a_taus} shows the theoretical resistor and capacitor values along
-with their theoretical time constant values.
+with their theoretical time constant values and their corresponding experimental
+contants.
 
 \begin{table}[H]
   \begin{center}
 		\caption{Analytical Time Constants}
 		\label{tab:fo_a_taus}
-		\begin{tabular}{ccr}
+		\begin{tabular}{ccccc}
       \\ \toprule
-			\\ $R$ ($\Omega$) & $C$ (\dem{mF}) & $\tau = RC$ (\dem{s})
+			\\ $R$ ($\Omega$) & $C$ (\dem{mF}) & $\tau_{\text{th}} = RC$ (\dem{s}) & $\tau_{\text{exp}} = RC$ (\dem{s}) & $\%Error$
       \\ \midrule
-			\\ $100$ & $0.1061$ & $10.61e-3$
-			\\ $50$ & $0.1061$ & $5.3050e-3$
+			\\ \input{foResults.tex}
       \\ \bottomrule
     \end{tabular}
   \end{center}
 \end{table}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{foAnalResponse.pdf}
+	\end{center}
+	\caption{First Order Butterworth Response}
+	\label{fig:foGraph}
+\end{figure}
 
 % section analytical_time_constants (end)
 
