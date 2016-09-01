@@ -18,3 +18,4 @@ cmake/modulartex
 *.lot
 *.synctex.gz
 *.toc
+*.ods*
