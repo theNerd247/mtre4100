@@ -68,18 +68,30 @@ Butterworth filter. We perform the following steps to create the filter:
 		block diagrams.
 \end{enumerate}
 
-Expirmentally the percent-overshoot is determined by \eqref{exPos}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{seAnalResponse.pdf}
+	\end{center}
+	\caption{Second Order Butterworth Response}
+	\label{fig:seGraph}
+\end{figure}
+
+\figref{seGraph} shows the system response of the second order Butterworth
+filter. Expirmentally the percent-overshoot is determined by \eqref{exPos}:
 
 \begin{align}
 	\%OS_{\text{exp}} = \frac{y_{\text{max}} - y_{\text{ss}}}{y_{\text{ss}}}
+	\label{eq:exPos}
 \end{align}
 where $y_{\text{max}}$ is the maximum value of the system output and
-$y_{\text{ss}}$ is the steady state value of the system.
+$y_{\text{ss}}$ is the steady state value of the system. In our case
+$y_{\text{max}} \approx 1.0438$ and $y_{\text{ss}} = 1$.
 
 For our system we calculated $\%OS_{\text{exp}} \approx 4.383$ which, relative
-to our theoretical value, has a percent error of $\%1.43$. With such a small
+to our theoretical value, has a percent error of $\%1.4257$. With such a small
 error we deem that the simulation and theoretical values for percent-overshoot
-agree. 
+agree. From this we can say that Labview accurately simulates realworld systems
+that can be modeled by differential equations.
 
 % subsection expiremental_determination_of_%os (end)
 
