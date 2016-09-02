@@ -10,7 +10,8 @@ RUN pacman --noconfirm -S\
  texlive-science\
  texlive-latexextra\
  make\
- texlive-bin
+ texlive-bin\
+ octave
 
 ENV BUILD_ROOT $HOME/build
 
