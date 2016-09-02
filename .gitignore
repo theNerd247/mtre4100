@@ -4,9 +4,6 @@ pdf/
 
 build/
 
-cmake/arcb
-cmake/modulartex
-
 *.sw*
 
 *.zip
