@@ -12,4 +12,7 @@ RUN pacman --noconfirm -S\
  make\
  texlive-bin
 
-RUN mkdir build && cd build && cmake .. && make
+ENV BUILD_ROOT $HOME/build
+
+COPY . $BUILD_ROOT
+RUN cd $BUILD_ROOT && mkdir build && cd build && cmake .. && make
