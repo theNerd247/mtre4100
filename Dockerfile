@@ -12,4 +12,4 @@ RUN pacman --noconfirm -S\
  make\
  texlive-bin
 
-CMD ls -R .
+RUN mkdir build && cd build && cmake .. && make
