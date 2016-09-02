@@ -12,6 +12,4 @@ RUN pacman --noconfirm -S\
  make\
  texlive-bin
 
-RUN cd $HOME 
-RUN git clone --recursive https://github.com/theNerd247/mtre4100.git
-RUN cd $HOME/mtre4100 && mkdir build && cd build && cmake .. && make
+CMD ls -R .
