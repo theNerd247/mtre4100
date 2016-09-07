@@ -1,0 +1,28 @@
+\documentclass[a4paper,titlepage]{article}
+\usepackage{amsmath}
+\begin{document}
+	\section{Mathematical Analysis}
+	\subsection{Background}
+	This lab demonstrates the use of Fourier Analysis and the Fourier Series. The Fourier Series is a tool to represent an arbitrary periodic function as a (possibly infinite) sum of sine and cosine waves.
+	
+	$$f(t) = a_0 + \sum_{1}^{\infty} a_n cos(n \omega_0 t) + b_n sin(n \omega_0 t)$$ 
+	Where $n$ is the index of the harmonic, $\omega_0$ is the fundamental frequency of the function (i.e. $\frac{1}{T}$), and the constants $a_0$, $a_n$, and $b_n$ are found as follows.
+	
+	$$a_0 = \frac{1}{T} \int_{0}^{T}f(t)dt$$
+	$$a_n = \frac{2}{T} \int_{0}^{T}f(t) cos(n \omega_0 t)dt$$
+	$$b_n = \frac{2}{T} \int_{0}^{T}f(t) sin(n \omega_0 t)dt$$
+	\subsection{Application to Square Wave}
+	The square wave is defined as
+	\[ f(t) =  \begin{cases}
+	1 & mT \leq t < (m + \frac{1}{2})T \\
+	-1 & (m + \frac{1}{2})T \leq t < (m + 1)T \\
+	\end{cases}
+	\]
+	This necessitates breaking the integrals into pieces to account for the discontinuity in the function. The equations thus become
+	
+	$$a_0 = \frac{1}{T} \int_{0}^{\frac{1}{2}T}1dt + \frac{1}{T} \int_{\frac{1}{2}T}^{T} -1dt$$ 
+	
+	$$a_n = \frac{2}{T} \int_{0}^{\frac{1}{2}T}1cos(n \omega_0 t)dt + \frac{2}{T} \int_{\frac{1}{2}T}^{T}-1cos(n \omega_0 t)dt $$
+	
+	$$b_n = \frac{2}{T} \int_{0}^{\frac{1}{2}T}1sin(n \omega_0 t)dt + \frac{2}{T} \int_{\frac{1}{2}T}^{T} -1sin(n \omega_0 t)dt $$
+\end{document}
