@@ -1,0 +1,79 @@
+\documentclass[main.tex]{subfile}
+\begin{document}
+	\section{Mathematical Analysis}
+	\subsection{Background}
+	This lab demonstrates the use of Fourier Analysis and the Fourier Series. The
+	Fourier Series is a tool to represent an arbitrary periodic function as a
+	(possibly infinite) sum of sine and cosine waves.
+	
+	$$f(t) = a_0 + \sum_{1}^{\infty} a_n cos(n \omega_0 t) + b_n sin(n \omega_0 t)$$ 
+	Where $n$ is the index of the harmonic, $\omega_0$ is the fundamental
+	frequency of the function (i.e. $\frac{1}{T}$), and the constants $a_0$,
+	$a_n$, and $b_n$ are found as follows.
+	
+	$$a_0 = \frac{1}{T} \int_{0}^{T}f(t)dt$$
+	$$a_n = \frac{2}{T} \int_{0}^{T}f(t) cos(n \omega_0 t)dt$$
+	$$b_n = \frac{2}{T} \int_{0}^{T}f(t) sin(n \omega_0 t)dt$$
+
+	\subsection{Application to Square Wave}
+	The square wave is defined by \eqref{sqrWave}
+
+	\[ f(t) =  \begin{cases}
+	1 & mT \leq t < (m + \frac{1}{2})T \\
+	-1 & (m + \frac{1}{2})T \leq t < (m + 1)T \\
+	\end{cases} \label{eq:sqrWave}
+	\]
+	This necessitates breaking the integrals into pieces to account for the
+	discontinuity in the function. The equations thus become
+	
+	$$a_0 = \frac{1}{T} \int_{0}^{\frac{1}{2}T}1dt + \frac{1}{T} \int_{\frac{1}{2}T}^{T} -1dt$$ 
+	
+	$$a_n = \frac{2}{T} \int_{0}^{\frac{1}{2}T}1cos(n \omega_0 t)dt + \frac{2}{T} \int_{\frac{1}{2}T}^{T}-1cos(n \omega_0 t)dt $$
+	
+	$$b_n = \frac{2}{T} \int_{0}^{\frac{1}{2}T}1sin(n \omega_0 t)dt + \frac{2}{T} \int_{\frac{1}{2}T}^{T} -1sin(n \omega_0 t)dt $$
+	
+	It is clear by inspection that $a_0$ evaluates to 0. Similarly, the square
+	wave is an odd function, and it can be shown that $a_n = 0$ for all $n$.
+	
+	$$b_n = \frac{2}{T} \int_{0}^{T} sin(\frac{n \pi t}{T}) dt$$
+	$$f = \frac{1}{T}$$
+	$$b_n = \frac{1}{T} \int_{0}^{T} sin(n \pi f t) dt$$
+	$$b_n = \frac{2}{T} \Big(\frac{-1}{n \pi f}\Big) [cos(n \pi f t)] \Big|_0^T$$
+	$$b_n = \frac{-2}{n \pi} [cos(n \pi) - cos(0)]$$
+	
+	$$\text{For all even $n$, } b_n = 0$$
+	$$\text{For odd $n$ use substitution $n = 2k-1$}$$
+	$$b_k = \frac{-2}{(2k-1) \pi} \Big(cos((2k-1) \pi) - 1 \Big)$$
+	$$cos((2k-1) \pi) = -1 \text{ for all $k$}$$
+	$$b_k = \frac{-2}{(2k-1) \pi} \Big(-2 \Big)$$
+	$$b_k = \frac{4}{(2k-1) \pi}$$
+	
+	Substituting $\omega_0 = \frac{2 \pi}{T}$ and $f = \frac{1}{T}$ into the sine
+	terms of the earlier definition of the Fourier Series we get the Fourier
+	series form of \eqref{sqrWave} as shown in \eqref{fSqrWave}.
+	
+	\begin{align}
+	f(t) = \sum_{k=1}^{\infty} \frac{4}{(2k-1) \pi} sin\Big(\frac{2 \pi (2k-1)}{T}t \Big)
+	\label{eq:fSqrWave}
+	\end{align}
+
+	\tabref{termExpansion} shows the evaluations of the terms in \eqref{fSqrWave}.
+
+	\begin{table}[H]
+	  \begin{center}
+			\caption{Fourier Expansion of \eqref{fSqrWave} for Terms $1 \leq k \leq 4$}
+			\label{tab:termExpansion}
+	    \begin{tabular}{lll}
+	      \\ \toprule
+				$k =$ & Term
+	      \\ \midrule
+				$1$ & $1.2732 sin(2 \pi f)$
+				\\$2$ &	$0.4244 sin(6 \pi f)$
+				\\$3$	&	$0.2546 sin(10 \pi f)$
+				\\$4$	&	$0.1819 sin(14 \pi f)$
+	      \\ \bottomrule
+	    \end{tabular}
+	  \end{center}
+	\end{table}
+	
+\end{document}
