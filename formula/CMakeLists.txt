@@ -12,8 +12,8 @@ set(texDir "tex")
 set(styDir "sty")
 set(imgDir "img")
 
-set(subProjects "util")
-#set(styleFiles "")
+#set(subProjects "util")
+#set(styleFiles "lab")
 
 set(includeList 
 	"tex"
