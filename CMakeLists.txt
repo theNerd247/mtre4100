@@ -42,6 +42,7 @@ set(subProjects "Octave")
 set(internalSubDirs 
 	"util"
 	"lab1"
+	"formula"
 	)
 
 # DO NOT REMOVE OR MODIFY
