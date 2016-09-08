@@ -1,0 +1,35 @@
+\documentclass[a4paper,titlepage]{article}
+
+% DO NOT REMOVE!
+\usepackage{subfiles}
+
+%include the packages and styles to use
+%\usepackage{package_name}
+\usepackage{labformat}
+\usepackage{mtre4100}
+\usepackage{notation}
+
+\begin{document}
+
+\labTitle{Lab 2 Fourier Transforms}
+
+% Date is automagically included (see Latex documentation)
+\maketitle
+
+\begin{abstract}
+	The purpose of this lab is to show how Fourier Analysis can be applied to periodic functions to represent them in a form better suited for further analysis. Many real world signals, for instance, are not continuous. This can make analysis using transforms such as the Laplace and z-transforms difficult, as integrating discontinuous functions requires special techniques and care. The Fourier Analysis approach simplifies this process by representing a function as a sum of sine and cosine functions. Sine and cosine functions are easily manipulated in other forms of analysis and are the preferred forms to use. \\ In this experiment we look at the specific case of a square wave that oscillates between 1 and -1 over a constant period. This kind of wave is found in abundance in digital electronic systems and has a simple Fourier transform, convenient for this experiment
+\end{abstract}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\pagebreak
+
+% other sections of the document goes here
+%\subfile{part1.tex}
+\subfile{tex/mathematicalAnalysis.tex}
+\subfile{tex/experimentalWork.tex}
+\subfile{tex/part2.tex}
+
+\end{document}
