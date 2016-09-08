@@ -3,9 +3,8 @@ cmake_minimum_required(VERSION 2.6)
 cmake_policy(SET CMP0011 NEW) 
 
 include(LaTeXBuild)
-include(OctaveBuild)
 
-project("lab1")
+project("formula")
 
 set(mainTexFile "main.tex")
 
@@ -13,21 +12,14 @@ set(texDir "tex")
 set(styDir "sty")
 set(imgDir "img")
 
-set(subProjects "util")
-#set(styleFiles "")
+#set(subProjects "util")
+#set(styleFiles "lab")
 
 set(includeList 
-	"data"
 	"tex"
 	"sty"
 	"img"
 	)
-
-set(genImgFiles "img/foAnalResponse.pdf")
-
-genOctaveCommand("scripts/analyze.m" "${genImgFiles}")
-
-add_custom_target(octaveGenFiles1 DEPENDS ${genImgFiles})
 
 SetupLaTexBuildEnv (
 	# the main tex file
@@ -39,5 +31,3 @@ SetupLaTexBuildEnv (
 	# projects this project depends on
 	"${subProjects}"
 	)
-
-add_dependencies(LaTeX_${PROJECT_NAME} octaveGenFiles1)
