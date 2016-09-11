@@ -33,7 +33,7 @@
 	$$b_n = \frac{2}{T} \int_{0}^{\frac{1}{2}T}1sin(n \omega_0 t)dt + \frac{2}{T} \int_{\frac{1}{2}T}^{T} -1sin(n \omega_0 t)dt $$
 	
 	It is clear by inspection that $a_0$ evaluates to 0. Similarly, the square
-	wave is an odd function, and it can be shown that $a_n = 0$ for all $n$.
+	wave is an odd function, and it can be shown that $a_n = 0$ for all $n$. For the coefficients $b_n$, they must be integrated as follows. 
 	
 	$$b_n = \frac{2}{T} \int_{0}^{T} sin(\frac{n \pi t}{T}) dt$$
 	$$f = \frac{1}{T}$$
@@ -53,7 +53,7 @@
 	series form of \eqref{sqrWave} as shown in \eqref{fSqrWave}.
 	
 	\begin{align}
-	f(t) = \sum_{k=1}^{\infty} \frac{4}{(2k-1) \pi} sin\Big(\frac{2 \pi (2k-1)}{T}t \Big)
+	f(t) = \sum_{k=1}^{\infty} \frac{4}{(2k-1) \pi} sin\Big(2 \pi (2k-1) f t \Big)
 	\label{eq:fSqrWave}
 	\end{align}
 
@@ -67,10 +67,10 @@
 	      \\ \toprule
 				$k =$ & Term
 	      \\ \midrule
-				$1$ & $1.2732 sin(2 \pi f)$
-				\\$2$ &	$0.4244 sin(6 \pi f)$
-				\\$3$	&	$0.2546 sin(10 \pi f)$
-				\\$4$	&	$0.1819 sin(14 \pi f)$
+				$1$ & $1.2732 sin(2 \pi f t)$
+				\\$2$ &	$0.4244 sin(6 \pi f t)$
+				\\$3$	&	$0.2546 sin(10 \pi f t)$
+				\\$4$	&	$0.1819 sin(14 \pi f t)$
 	      \\ \bottomrule
 	    \end{tabular}
 	  \end{center}
