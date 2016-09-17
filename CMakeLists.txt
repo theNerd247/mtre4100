@@ -23,9 +23,7 @@ set(CMAKE_MODULE_PATH
 
 include(ARCB)
 
-find_package(Octave 4.0.0 REQUIRED
-	COMPONENTS control
-	)
+find_package(Octave 4.0.0 REQUIRED)
 
 # should be "toplevel","executable","staticlib",or "sharedlib"
 set(buildType "toplevel")
