@@ -18,7 +18,7 @@ tc1th = 100*0.1061e-3;
 
 
 plot(rawData1(:,1), rawData1(:,2));
-print('../img/foAnalResponse1.pdf','-S600,400');
+print('../img/foAnalResponse2.pdf','-S600,400');
 tc2 = interp1(rawData2(:,2),rawData1(:,1),0.632);
 tc2th = 50*0.1061e-3;
 
