@@ -12,6 +12,8 @@ set(texDir "tex")
 set(styDir "sty")
 set(imgDir "img")
 
+make_directory("${CMAKE_CURRENT_SOURCE_DIR}/img")
+
 set(subProjects "util")
 #set(styleFiles "")
 
