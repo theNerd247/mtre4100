@@ -3,7 +3,7 @@
 # scatter(data[:,1],data[:,2]).
 function plotData(data)
 
-  f = @() {plot(data(:,1),data(:,2)); scatter(data(:,1),data(:,2));};
+  f = @() {plot(data(:,1),data(:,2));scatter(data(:,1),data(:,2));};
 
   withHold(f);
 

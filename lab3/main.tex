@@ -4,16 +4,21 @@
 \usepackage{subfiles}
 
 %include the packages and styles to use
-\usepackage{lab1}
+\usepackage{lab3}
 \begin{document}
 
-\labTitle{Lab 2 Dynamic Systems}
+\labTitle{Lab 3 Digital Aquisition}
 
 % Date is automagically included (see Latex documentation)
 \maketitle
 
 \begin{abstract}
-	\texttt{TODO}
+	This lab aims to investigate data acquisition via sinusoidal signals and the
+	errors involved therein. We first investigate the affects digital sampling
+	frequencies have on the measured data and the use of the Nyquist Frequency.
+	Because generated signal have errors within themselves we also investigate the
+	effects of amplitude, y-axis offset, and quantization errors in obtaining the
+	signal.
 \end{abstract}
 
 \tableofcontents
@@ -23,5 +28,7 @@
 \pagebreak
 
 % other sections of the document goes here
+\subfile{intro.tex}
+\subfile{part2.tex}
 
 \end{document}
