@@ -23,17 +23,14 @@ set(includeList
 	"img"
 	)
 
-set(genImgFiles 
-  "img/pt2_80hz.pdf"
-  "img/pt2_200hz.pdf"
-  )
-
-genOctaveCommand("scripts/analyze2.m" "${genImgFiles}")
-genOctaveCommand("scripts/analyze3.m" "pt3.pdf")
+genOctaveCommand("scripts/analyze2.m" "img/pt2_80Hz.pdf" "img/pt2_200Hz.pdf")
+genOctaveCommand("scripts/analyze3.m" "img/pt3.pdf")
+genOctaveCommand("scripts/analyze4.m" "img/pt4_1.pdf" "img/pt4_2.pdf")
 
 add_custom_target(octaveGenFiles3 DEPENDS 
-  ${genImgFiles}
-  "pt3.pdf"
+  "img/pt2_80Hz.pdf" "img/pt2_200Hz.pdf"
+  "img/pt3.pdf"
+  "img/pt4_1.pdf" "img/pt4_2.pdf"
   )
 
 SetupLaTexBuildEnv (
