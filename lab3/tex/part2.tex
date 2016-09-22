@@ -46,6 +46,23 @@ sinusoidal wave than above but with the same sampled data.
   \label{fig:pt280hz}
 \end{figure}
 
+Following simulation, the experiment continued with analysis of physical
+electrical frequencies using the ELVIS II board as a function generator and
+LabVIEW as a digital acquisition device (DAQ). The function generator on the
+ELVIS board was configured to generate a 100 Hz sine wave with a 0.1 volt
+peak-to-peak amplitude. The function generator was then wired to the analog
+input channel on the same board. In LabView a DAQ assistant block was placed
+and set to measure voltage on the same analog input channel. The DAQ was then
+configured to take 8 samples in the range of -10 to 10 volts; 8 samples is
+sufficient to capture 10 periods of the 100 Hz wave at a sample rate of 80 Hz.
+The data was exported to an Excel spreadsheet and differences between the
+sampled waveform and an ideal sine wave were noted.  
+
+The sample rate was then increased to 200 Hz and the waveform was then
+re-sampled, using enough samples to capture 10 periods of the source wave. As in
+the previous test, the sampled data were recorded to a spreadsheet and the
+differences between the sample data and an ideal sine wave were noted.
+
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=\linewidth]{pt2_200Hz.pdf}
@@ -54,5 +71,11 @@ sinusoidal wave than above but with the same sampled data.
   \label{fig:pt280hz}
 \end{figure}
 % document text goes here
+
+Notice that the higher sampling rate gives a more accurate representation of the
+generated sinusoidal wave. A attribute what appears to be modulation in the amplitude
+of \figref{pt280hz} to the fact that even at a higher sampling rate not enough
+data is gathered in a single period of the sampled wave to avoid missing pieces
+of data.
 
 \end{document}
