@@ -30,10 +30,11 @@ we obtain the following:
 \begin{align}
   x[n] &= A\sin{(2\pi f \delta_{t} n + \phi)} + y \label{eq:sampledWave}
   \\&= A\sin{(2\pi f \delta_{t} n + 2\pi a + \phi)} + y
-  \\&= A\sin{(2\pi \delta_{t} n (f + \frac{a}{n\delta_{t}})}) + y
+  \\&= A\sin{(2\pi \delta_{t} n (f + )}) + y
 \end{align}
 
-Note that
+$f + \frac{a}{n\delta_{t}}$ is known as the alias frequency as it creates a different
+sinusoidal wave than above but with the same sampled data.
 
 % section nyquist_frequency (end)
 
