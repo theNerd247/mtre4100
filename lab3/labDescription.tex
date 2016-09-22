@@ -1,0 +1,13 @@
+\documentclass[a4paper,titlepage]{article}
+\begin{document}
+	\section{Simulation}
+	The experiment started with simulations using LabVIEW. The simulation consisted simply of a single function generation block. The block was set to generate a sine wave at 100 Hz, sampled at 80 Hz. The sample rate was then adjusted to show how sample rate affects how the resulting signal appears. This was also used to show how LabVIEW will not allow a function to be sampled below the Nyquist frequency.
+	
+	\section{Physical Experiments using the Elvis II Board}
+	\subsection{Naive Sampling}
+	Following simulation, the experiment continued with analysis of physical electrical frequencies using the ELVIS II board as a function generator and LabVIEW as a digital acquisition device (DAQ). The function generator on the ELVIS board was configured to generate a 100 Hz sine wave with a 0.1 volt peak-to-peak amplitude. The function generator was then wired to the analog input channel on the same board. In LabView a DAQ assistant block was placed and set to measure voltage on the same analog input channel. The DAQ was then configured to take 8 samples in the range of -10 to 10 volts; 8 samples is sufficient to capture 10 periods of the 100 Hz wave at a sample rate of 80 Hz. The data was exported to an Excel spreadsheet and differences between the sampled waveform and an ideal sine wave were noted.
+	\\
+	The sample rate was then increased to 300 Hz and the waveform was then re-sampled, using enough samples to capture 10 periods of the source wave. As in the previous test, the sampled data were recorded to a spreadsheet and the differences between the sample data and an ideal sine wave were noted.
+	
+	\subsection{Sampling to Avoid Aliasing and Quantization Errors}
+\end{document}
