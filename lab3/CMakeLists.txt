@@ -29,8 +29,12 @@ set(genImgFiles
   )
 
 genOctaveCommand("scripts/analyze2.m" "${genImgFiles}")
+genOctaveCommand("scripts/analyze3.m" "pt3.pdf")
 
-add_custom_target(octaveGenFiles3 DEPENDS ${genImgFiles})
+add_custom_target(octaveGenFiles3 DEPENDS 
+  ${genImgFiles}
+  "pt3.pdf"
+  )
 
 SetupLaTexBuildEnv (
 	# the main tex file

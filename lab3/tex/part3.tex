@@ -1,0 +1,61 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+\section{Offset Errors} 
+\label{sec:nyquist_frequency}
+
+\subsection{Null-Offset and Amplitude Error}
+\label{sec:amplitude_error}
+
+As shown in \eqref{sampledWave} there are more potential errors present than
+aliasing. Firstly there's potential to get the wrong $A_{pp}$ - the
+peak-to-peak amplitude. To determine this amplitude error we use the maximum
+absolute value in the sampled signal We then compare it to our expected
+$A_{pp}$. 
+
+For our experiment we use a sampling rate of $4\dem{kHz}$ to avoid any aliasing
+error. \tabref{ampError} shows the amplitude of the data gathered and the error
+compared to our expected $A_{pp} = 0.05$ of the data gathered. As seen the
+amplitude error does not fall within the acceptable range.
+
+\begin{table}[H]
+  \begin{center}
+    \caption{Collected data for Amplitude Error}
+    \label{tab:ampError}
+    \begin{tabular}{lll}
+      \\ \toprule
+      Maximum Abs. Value & \% Error  & Acceptable Amplitude Range
+      \\ \midrule
+      $0.054241$ & $8.48\%$ & $0.0495 - 0.0505$
+      \\ \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+The second type of error we have is null-offset. Simply put this is the error in
+the $y$ part of \eqref{sampledWave}. To calculate this we use the average value
+of the sampled wave which - theoretically - should be $0$. The average value is
+computed using $\frac{1}{t_2-t_1}\int_{t_1}^{t_2}{f(t) dt}$ where the integral
+is evaluated using the trapezoidal method. We then find that the offset error of
+the sine wave is $6.334e{-3}$.
+
+To determine the exact sources of error more analysis would need to be
+performed. However, with some common sense, we can make a rather educated guess.
+First the amplitude error could come from the fact that the sampling frequency
+is still to low to accurately depict the sampled wave. This is due to the fact
+that the period of the sampling frequency is not at a low enough resolution to
+capture the peaks of the sine wave. Thus a maximum amplitude seen by the sampled
+data would be lower than that of the actual sine wave produced. 
+
+Offset errors could be generated from improper grounding of the sinewave or the
+sampling circuit. Also, limited sampling frequencies could produce an offset
+error - as the offset is calculated using the amplitude of the sine wave. To
+reduce these errors post data analysis could be performed to interpolate the
+actual sine wave from the sampled data. Of course this would require a high
+enough resolution such that the interpolation would accurately represent the
+measured signal.
+
+% subsection null_offset_error (end)
+
+\end{document}
