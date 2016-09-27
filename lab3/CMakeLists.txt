@@ -23,16 +23,6 @@ set(includeList
 	"img"
 	)
 
-genOctaveCommand("scripts/analyze2.m" "img/pt2_80Hz.pdf" "img/pt2_200Hz.pdf")
-genOctaveCommand("scripts/analyze3.m" "img/pt3.pdf")
-genOctaveCommand("scripts/analyze4.m" "img/pt4_1.pdf" "img/pt4_2.pdf")
-
-add_custom_target(octaveGenFiles3 DEPENDS 
-  "img/pt2_80Hz.pdf" "img/pt2_200Hz.pdf"
-  "img/pt3.pdf"
-  "img/pt4_1.pdf" "img/pt4_2.pdf"
-  )
-
 SetupLaTexBuildEnv (
 	# the main tex file
 	"${mainTexFile}" 
@@ -43,5 +33,3 @@ SetupLaTexBuildEnv (
 	# projects this project depends on
 	"${subProjects}"
 	)
-
-add_dependencies(LaTeX_${PROJECT_NAME} octaveGenFiles3)

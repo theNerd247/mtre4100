@@ -23,12 +23,6 @@ set(includeList
 	"img"
 	)
 
-set(genImgFiles "img/pt2Plots.pdf")
-
-genOctaveCommand("scripts/analyze.m" "${genImgFiles}")
-
-add_custom_target(octaveGenFiles2 DEPENDS ${genImgFiles})
-
 SetupLaTexBuildEnv (
 	# the main tex file
 	"${mainTexFile}" 
@@ -39,5 +33,3 @@ SetupLaTexBuildEnv (
 	# projects this project depends on
 	"${subProjects}"
 	)
-
-add_dependencies(LaTeX_${PROJECT_NAME} octaveGenFiles2)
