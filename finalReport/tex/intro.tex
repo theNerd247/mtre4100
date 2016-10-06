@@ -1,0 +1,37 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+% document text goes here
+\section{Introduction} 
+\label{sec:introduction}
+
+Most industrial robotic applications today involve repetative motion tasks, with
+little change in the operations of the robots themselves. Typically they are
+programmed to optimally perform a single task. However today, with the growing
+rates of production and ranging environment types we find that robots are needed
+in more dynamic environments. For example Amazon has begun seeking robots that
+can perform item selection in warehouses \cite{amazon} which requires the robots
+to be aware of robots surrounded in a changing environment. Consider also the
+cost of programming robots to perform very specific tasks. For industrial
+settings where the product may change from day to day - such as glass
+manufacturing - it is difficult to constantly reprogram and calibrate a robot to
+conform its kinematic path planning algorithms to suite environment or product
+constraints. 
+
+Model predictive controllers (or MPCs) boast two solutions to the changing
+environment and constraints problem. First, MPC algorithms allow us to use
+kinematic models of the robot into the problem directly - this is more a legacy
+system support to older control methods. Second, and more importantly, we can
+incorporate system (both robotic and environmental) constraints on our control
+model. According to \cite{autoVehicle} MPC has been mostly restricted to slower
+responding systems such as chemical manufacturing facilities. Recent approaches
+to autonomous vehicle applications have integrated MPC algorithms as a means of
+path planning \cite{auv,uphill} and used improved optimization stage algorithms
+(we will explain this further in \secref{sbmpc}) for generating flexible and
+optimal controller outputs. This optimization algorithm is known as sample-based
+model controller (SBMPC).
+
+% section introduction (end)
+
+\end{document}

@@ -43,6 +43,7 @@ set(internalSubDirs
 	"formula"
   "lab2"
   "lab3"
+	"finalReport"
 	)
 
 # DO NOT REMOVE OR MODIFY
