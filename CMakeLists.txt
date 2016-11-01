@@ -23,7 +23,7 @@ set(CMAKE_MODULE_PATH
 
 include(ARCB)
 
-find_package(Octave 4.0.0 REQUIRED)
+#find_package(Octave 4.0.0 REQUIRED)
 
 # should be "toplevel","executable","staticlib",or "sharedlib"
 set(buildType "toplevel")
@@ -32,7 +32,7 @@ set(buildType "toplevel")
 set(sources "")
 
 #the name of the projects this project depends on
-set(subProjects "Octave")
+#set(subProjects "Octave")
 
 # the internal subprojecs. NOTE: include these subprojects in the order that
 # they depend on each other. For example, if proj1 depends on proj2 list proj2
@@ -42,6 +42,8 @@ set(internalSubDirs
 	"lab1"
 	"formula"
   "lab2"
+  "lab3"
+	"finalReport"
 	)
 
 # DO NOT REMOVE OR MODIFY

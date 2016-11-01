@@ -1,0 +1,49 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+\section{Applications of SBMPC} 
+\label{sec:applications_of_sbmpc}
+
+\cite{autoVehicle,auv} show applications of SBMPC in the path-planning problem
+for mobile robots. In these applications the robot is driven by a SBMPC control
+algorithm that enables optimized path planning to move the robot towards a goal
+while avoiding detected objects. \cite{uphill} shows another modern application.
+This project solves the issue of path planning for a robot going uphill. The
+issue is that the motor commands sent to the robot depend on the initial
+position of the robot; if the robot doesn't have enough initial momentum then it
+will not be able to reach the top of the hill. In a more generalized context
+this project shows how SBMPC can be used to solve the local minimum avoidance
+problem found in robot path planning.
+
+Aside from currently implemented SBMPC algoriths we propose some other
+applications for industrial settings. First we extend the application shown in
+\cite{uphill} to path planning for serial robot arms that perform pick and place
+motions. One issue in an industrial setting is the difficult task of
+re-programming a robot if the product being picked change (such as size or
+weight). In some circumstances it is necessary to change the robot entirely to
+account for these changes in the product. With an SBMPC algorithm their is no
+changes necessary for modifying the path planning of the robot arm - which saves
+both time and money. The SBMPC algorithm will account for the changes made in
+the product and, because it accounts for the surrounding environment,
+automatically adjust the robot's path planning.
+
+Industrial robotic applications are numerous. One import application of SBMPC is
+object avoidance of dynamic environments - such as with other moving machinery
+interacting with the robots. The integration point for SBMPC algorithm would be
+for online path planning of the robot. The goal being of course to move the
+robot in such a way to avoid detected objects in the workspace. 
+
+Finally another proposed application of SBMPC in industrial settings were
+high-speed MIMO controllers for production processes are required. While a
+solution to this process is still being pursued (\cite{autoVehicle} mentions
+this algorithm being slow in computation time) computation speed optimization
+algoithms could be implemented. \cite{uphill,auv} discuss briefly that MPC
+algorithms have been widely used in industial settings - mainly in chemical
+processing plants - and compared to SBMPC is extremely slow. So while SBMPC
+still needs optimization it still is a viable solution for some high-speed
+applications. 
+
+% section applications_of_sbmpc (end)
+
+\end{document}
