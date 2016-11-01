@@ -4,18 +4,21 @@
 \usepackage{subfiles}
 
 %include the packages and styles to use
-%\usepackage{package_name}
-%\usepackage{lab1}
-
+\usepackage{lab1}
 \begin{document}
 
-\title{Project Title}
-\author{First Last}
+\labTitle{Lab 1 Dynamic Systems}
+
 % Date is automagically included (see Latex documentation)
 \maketitle
 
 \begin{abstract}
-	
+	This lab aims to analyze the properties of first and second order differential
+	equations both analytically and experimentially (using \Labview). First we
+	note how differential equations arise naturally from physical systems and are
+	useful in modeling physical behavior. Second we show that electrical filters
+	have transient responses that are ignored in preference to their stead-state
+	responses.
 \end{abstract}
 
 \tableofcontents
@@ -25,6 +28,9 @@
 \pagebreak
 
 % other sections of the document goes here
-\subfile{Lab1Part1}
+\subfile{firstOrder}
+%\subfile{Lab1Part1}
+\subfile{secondOrder}
+\subfile{conclusion}
 
 \end{document}

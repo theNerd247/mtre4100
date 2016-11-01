@@ -1,22 +1,21 @@
 cmake_minimum_required(VERSION 2.6)
 #acknowledge policy push/pop
-cmake_policy(SET CMP0011 NEW)
+cmake_policy(SET CMP0011 NEW) 
 
 include(LaTeXBuild)
 
-project("util")
+project("formula")
 
-set(mainTexFile "")
+set(mainTexFile "main.tex")
 
-#set(subProjects "")
+set(texDir "tex")
+set(styDir "sty")
+set(imgDir "img")
 
-set(styleFiles
-	"sty/labformat.sty"
-	"sty/mtre4100.sty"
-	"sty/notation.sty"
-	)
+#set(subProjects "util")
+#set(styleFiles "lab")
 
-set(includeList
+set(includeList 
 	"tex"
 	"sty"
 	"img"
@@ -24,9 +23,9 @@ set(includeList
 
 SetupLaTexBuildEnv (
 	# the main tex file
-	"${mainTexFile}"
+	"${mainTexFile}" 
 	# the file search paths this project provides
-	"${includeList}"
+	"${includeList}" 
 	# the style files this project provides
 	"${styleFiles}"
 	# projects this project depends on

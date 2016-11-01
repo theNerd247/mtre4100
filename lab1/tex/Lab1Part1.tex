@@ -17,8 +17,14 @@
 	\\where the constant \(RC\) is the time constant and has units of seconds as demonstrated.
 	
 	
-	\[RC = (\frac{Mass * Length^2}{Time^2 * Current^2} )(\frac{Time^4 * Current^2}{Mass * Length^2}) = Time\]
+	\[RC = (\frac{M * L^2}{T^2 * I^2} )(\frac{T^4 * I^2}{M * L^2}) = T\]
 	\\
 	For the case of \(R = 100\Omega\) and \(C = 0.1061 mF\) the time constant, \(RC = 10.61 ms\). For the case of \(R=50\Omega\) and \(C=0.1061mF\) the time constant \(RC=5.305ms\).
+	
+	\section{Experimental Analysis}
+	The lab "experiment" was conducted using LabView. First, a signal generator block was placed and configured to produce a 1Hz square wave. The generator output was then connected to a filter block configured to simulate a first order lowpass Butterworth filter with a cutoff frequency of 30 Hz. Finally, both the output of the signal generator and the output of the filter were connected to a graph block so both the original and filtered waves could be seen.
+	
+	\section{Mathematical verses Experimental Analysis}
+	
 	
 \end{document}

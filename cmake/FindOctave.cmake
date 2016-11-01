@@ -1,6 +1,10 @@
 #finds octave and any subpackages required
 include(FindPackageHandleStandardArgs)
 
+# this sets: 
+# Octave_FOUND
+# Octave_EXECUTABLE
+
 find_program(Octave_binary "octave")
 
 if(EXISTS ${Octave_binary})
@@ -30,3 +34,7 @@ find_package_handle_standard_args(Octave
 	HANDLE_COMPONENTS
 	VERSION_VAR Octave_VERSION_STRING
 	)
+
+if(Octave_FOUND)
+	set(Octave_EXECUTABLE "${Octave_binary}")
+endif()
