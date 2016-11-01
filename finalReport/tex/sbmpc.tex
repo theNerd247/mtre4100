@@ -5,11 +5,9 @@
 \section{Model Predictive Controllers} 
 \label{sec:sbmpc}
 
-Before we discuss SBMPC we note to the reader that because the scope of this
-paper is non-technical we do not wish to show the gritty details of the SBMPC
-algorithm. Instead we will do a review of the basic concepts.
-
-The basic MPC algorithm is as follows\cite{autoVehicle}:
+SBMPC is an extension of the MPC algorithm and therefore we first review the
+basics MPC so as to aid in understanding SBMPC. A basic MPC algorithm is as
+follows\cite{autoVehicle}:
 
 \begin{enumerate}
 	\item Obtain the current state of the system being controlled.
@@ -28,6 +26,17 @@ certain trajectory to avoid damaging property or humans). Our system inputs
 would be the angle of the rifle both vertically and horizontally. The state
 could be the kinetic and kinematic properties of the bullet and target. The
 system output would be the location of the bullet relative to the target.
+\figref{example} shows this situation. At some time $t=0$ the target is moving.
+The SBMPC control system then predicts where the target would be at time
+$t=t_{\texttt{hit}}$ and then attempts a shot. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{example.png}
+	\end{center}
+	\caption{Target Tracking Gun example with SBMPC}
+	\label{fig:example}
+\end{figure}
 
 For the sake of the example let us assume that we can freeze the system at
 anytime wherein our clock will also stop. To get hit on the target we first,
@@ -36,7 +45,8 @@ next $N$ time steps while obeying our system constraints. Once an optimal
 predicted trajectory is determined we then implement our first set of these
 system inputs while unfreezing our system. Practically, in industry, the system
 is actually never "frozen" but the prediction step is performed fast enough that
-the system is assumed to not have changed much in its state.
+the system is assumed to not have changed in its state while computing the
+prediction.
 
 % section sbmpc (end)
 

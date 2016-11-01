@@ -5,41 +5,41 @@
 \section{Applications of SBMPC} 
 \label{sec:applications_of_sbmpc}
 
-From \cite{autoVehicle,uphill,auv} we have three robotic applications for SBMPC.
-All three are applied to path planning for mobile robots. Within such
-applications the control variables are typically kinematic based such as
-position and velocity. Current applications include generating optimized paths
-to a goal for mobile robots.  According to \cite{auv} SBMPC is also suitable for
-path planning autonomous underwater vehicles in searching out mines. In
-\cite{uphill} we find that SBMPC is good for detecting and avoiding local
-minimum in the system state and perform path planning accordingly.
+\cite{autoVehicle,auv} show applications of SBMPC in the path-planning problem
+for mobile robots. In these applications the robot is driven by a SBMPC control
+algorithm that enables optimized path planning to move the robot towards a goal
+while avoiding detected objects. \cite{uphill} shows another modern application.
+This project solves the issue of path planning for a robot going uphill. The
+issue is that the motor commands sent to the robot depend on the initial
+position of the robot; if the robot doesn't have enough initial momentum then it
+will not be able to reach the top of the hill. In a more generalized context
+this project shows how SBMPC can be used to solve the local minimum avoidance
+problem found in robot path planning.
+
+Aside from currently implemented SBMPC algoriths we propose some other
+applications for industrial settings. First we extend the application shown in
+\cite{uphill} to path planning for serial robot arms that perform pick and place
+motions. One issue in an industrial setting is the difficult task of
+re-programming a robot if the product being picked change (such as size or
+weight). In some circumstances it is necessary to change the robot entirely to
+account for these changes in the product. With an SBMPC algorithm their is no
+changes necessary for modifying the path planning of the robot arm - which saves
+both time and money. The SBMPC algorithm will account for the changes made in
+the product and, because it accounts for the surrounding environment,
+automatically adjust the robot's path planning.
 
 Industrial robotic applications are numerous. One import application of SBMPC is
 object avoidance of dynamic environments - such as with other moving machinery
 interacting with the robots. The integration point for SBMPC algorithm would be
 for online path planning of the robot. The goal being of course to move the
-robot in such a way to avoid detected objects in the workspace. For example a
-kinematic model of a $3$ prismatic joint robot we have the following kinematic
-model: 
+robot in such a way to avoid detected objects in the workspace. 
 
-\begin{align}
-	\vec{x}_{k+1} &= A\vec{x}_{k} + B\vec{u}_{k}
-\\ \vec{y}_{k+1} &= C\vec{x}_{k} + \vec{d}
-\end{align}
-where $A$,$B$,$C$ form the state space model for the system. $\vec{x}$ is the
-state of our system, $\vec{u}$ is the joint space acceleration, and $\vec{y}$ is
-the position and velocities of the end-effector.
-
-Along with the state space model the constraints of our system will be: 
-
-\begin{align}
-	\vec{u}_{\text{l}} \leq \vec{u}_{k} \leq \vec{u}_{\text{u}}
-	\\C(\vec{y}) \leq 0
-\end{align}
-where $C(\vec{y})$ are the collision constraints on the end-effector. The
-end-effector. Our fitness functions would consider the least amount of
-additional acceleration required to move the end-effector towards a target while
-avoiding known obstacles.
+Finally another application of SBMPC in industrial settings were high-speed MIMO
+controllers for production processes are required. While a solution to this
+process is still being pursued (\cite{autoVehicle} mentions this algorithm being
+slow in computation time) computation speed optimization algoithms could be
+implemented. \cite{uphill,auv} discuss briefly that MPC algorithms have been
+widely used in industial settings - mainly in chemical processing plants.
 
 % section applications_of_sbmpc (end)
 
