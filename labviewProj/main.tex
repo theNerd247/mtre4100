@@ -1,0 +1,34 @@
+\documentclass[a4paper,titlepage]{article}
+
+% DO NOT REMOVE!
+\usepackage{subfiles}
+
+%include the packages and styles to use
+%\usepackage{package_name}
+\usepackage{labviewProj}
+
+\begin{document}
+
+\title{Project Title}
+\author{First Last}
+% Date is automagically included (see Latex documentation)
+\maketitle
+
+\begin{abstract}
+	This project overviews the use of \Labview for modelling industrial control
+	systems using PID controllers and signal processing. We use a pipe flow model
+	that uses PID controllers for tempurature and pressure to control the flow
+	output. Each PID controller's output is fed into a noise generator to simulate
+	environment disturbances in the system.
+\end{abstract}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\pagebreak
+
+% other sections of the document goes here
+\subfile{intro}
+
+\end{document}

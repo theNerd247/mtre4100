@@ -1,0 +1,51 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+\section{Introduction} 
+\label{sec:introduction}
+
+A PID controller is the simplest controller design and is most popular in
+industrial settings. PID controllers are only used for single input; single
+output systems that are inherently stable - that is for a given bounded input the
+system has a bounded output. A PID controller is created by first creating a
+system model, attaching a general PID controller, and finally tuning the
+controller's to achieve some desired output. 
+
+Because time was limited, the reader should note that the models for this
+project are not realistic and were created for the sake of showing the use of
+\Labview in control modeling. Thus, we use the word ''model`` in the most
+non-realistic sense. Our model will be to predict the flow rate of a fluid
+through a pipe by controlling the tempurature and pressure independently. Our
+flow rate is modelled as follows: 
+
+\begin{align}
+	Q &= 0.6T+0.4P \label{eq:flowRate}
+\end{align}
+where $Q$ is the flow rate, $T$ is the tempurature, and $P$ is the pressure of
+the fluid.
+
+To make the controllers simple to design we use third order systems for
+tempurature and pressure:
+
+\begin{align}
+	T &= a_2D^2\{x_1\} + a_1D\{x_1\} + a_0x_1
+	\\P &= b_2D^2\{x_2\} + b_1D\{x_2\} + b_0x_2
+\end{align}
+and in the corresponding transfer functions:
+
+\begin{align}
+	\frac{T(s)}{X_1(s)} &= \frac{1}{a_2s^2+a_1s+a_0}
+	\\\frac{P(s)}{X_2(s)} &= \frac{1}{b_2s^2+b_1s+b_0}
+\end{align}
+
+Realistically the measured tempurature will have noise introduced into it and
+will need filtering. To simulate noise we will use the gausian distribution
+noise generation and a Butterworth lowpass filter to obtain the actual
+tempurature and pressure signals.
+
+% section introduction (end)
+
+% document text goes here
+
+\end{document}

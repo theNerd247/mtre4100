@@ -1,0 +1,31 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+\section{\Labview VI} 
+\label{sec:labview_vi}
+
+To begin building the labview module we first design our PID controllers. We use
+the PID controller block and the transfer function to generate the block
+diagrams:
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{pidController1.png}
+	\end{center}
+	\caption{}
+	\label{fig:}
+\end{figure}
+
+Notice the feedback from the transfer function goes directly into the PID
+controller. This is the normal mode of operation for our controller. Later we
+will add a sub-diagram to generate signal noise and perform our filtering. The
+set point is a user-interface (or UI) input.
+
+Next we create a block to generate the PID controller tuning parameters. We use
+a series of UI inputs to make tuning the controller easier later on.
+
+
+% section labview_vi (end)
+
+\end{document}
