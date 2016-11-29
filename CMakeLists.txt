@@ -44,6 +44,7 @@ set(internalSubDirs
   "lab2"
   "lab3"
 	"finalReport"
+	"labviewProj"
 	)
 
 # DO NOT REMOVE OR MODIFY

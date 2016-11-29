@@ -1,0 +1,40 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+\section{Final Project Design} 
+\label{sec:final_project_design}
+
+The final design of the measurement system contains two PID controllers, one for
+temperature as shown in the previous section, and a second for pressure
+measurement. The final diagram is shown in \figref{finalDiagram}. The output
+from the pressure and temperature are used to calculate a prediction of the
+fluid flow rate (per \eqref{flowRate}) in the pipe.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{finalBlockDiagram.png}
+	\end{center}
+	\caption{Final Labview block diagram}
+	\label{fig:finalDiagram}
+\end{figure}
+
+A sample of the front panel during operation is shown in \figref{frontPanel}.
+There are two things to notice about the sample plot. First, the smoothing of
+the noisy inputs for the system. While both temperature and pressure sensor
+inputs show a busy signal with lots of noise, the filters from the noise-filter
+diagrams produce a final smooth curve that is useful for analysis. Second, the
+response behaves as expected; the curve in the middle of the plot is indeed 
+behaving as mathematically expected: below pressure and above the temperature plots.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{frontPanel}
+	\end{center}
+	\caption{Sample Front Panel During Operation}
+	\label{fig:frontPanel}
+\end{figure}
+
+% section final_project_design (end)
+
+\end{document}

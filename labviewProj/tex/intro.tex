@@ -1,0 +1,54 @@
+\documentclass[main.tex]{subfile}
+
+\begin{document}
+
+\section{Introduction} 
+\label{sec:introduction}
+
+PID (proportional, integral, derivative) controllers are common controllers used
+a variety of control systems. Valued for their simple design, PID controllers 
+are highly popular in industrial settings. They are not without their limitations, 
+however; PID controllers can only be used for single input; single
+output systems that are inherently stable - that is for a given bounded input the
+system has a bounded output. A PID controller is created by first creating a
+system model, attaching a general PID controller, and finally tuning the
+controller's to achieve some desired output. 
+
+Because time was limited, the reader should note that the models for this
+project are not realistic and were created for the sake of showing the use of
+\Labview in control modeling. Our control model will predict the flow rate of a
+fluid through a pipe by controlling the temperature and pressure independently.
+Our flow rate is modeled as follows: 
+
+\begin{align}
+	Q &= 0.6T+0.4P \label{eq:flowRate}
+\end{align}
+where $Q$ is the flow rate, $T$ is the temperature, and $P$ is the pressure of
+the fluid. Note that the temperature readings will have more weight on the
+calculated flow rate than the pressure. Therefore we will expect the flow rate
+plot to be placed below the pressure plot but above the temperature plot.
+
+To make the controllers simple to design we use third order systems for
+temperature and pressure:
+
+\begin{align}
+	T &= a_2D^2\{x_1\} + a_1D\{x_1\} + a_0x_1
+	\\P &= b_2D^2\{x_2\} + b_1D\{x_2\} + b_0x_2
+\end{align}
+and in the corresponding transfer functions:
+
+\begin{align}
+	\frac{T(s)}{X_1(s)} &= \frac{1}{a_2s^2+a_1s+a_0}
+	\\\frac{P(s)}{X_2(s)} &= \frac{1}{b_2s^2+b_1s+b_0}
+\end{align}
+
+Realistically, the measured temperature will have noise introduced into it and
+will need filtering. To simulate noise we will use a Gaussian distribution
+noise generation block and a Butterworth lowpass filter to obtain the actual
+temperature and pressure signals.
+
+% section introduction (end)
+
+% document text goes here
+
+\end{document}
