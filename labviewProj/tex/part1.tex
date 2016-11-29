@@ -6,8 +6,8 @@
 \label{sec:labview_vi}
 
 To begin building the labview module we first design our PID controllers. We use
-the PID controller block and the transfer function (who's configuration is shown
-in \figref{pidParams}) to generate the block diagrams:
+the PID controller block and the transfer function (the configuration of which 
+is shown in \figref{pidParams}) to generate the block diagrams:
 
 \begin{figure}[h]
 	\begin{center}
@@ -68,7 +68,7 @@ still maintaining an under-damped response). The resulting response is shown in
 
 After tuning the PID controller to have an under-damped response we then add
 noise to the output response to simulate vibrations in the sensors. To do this
-we had a sub-diagram which add noise to the incoming signal and runs it through
+we add a sub-diagram which adds noise to the incoming signal and runs it through
 a Butterworth-filter to obtain a clean sensor signal. We connect the output from
 our plant model to the input of the noise-filter diagram and the output to the
 process variable of the PID controller as shown in \figref{noise1}.

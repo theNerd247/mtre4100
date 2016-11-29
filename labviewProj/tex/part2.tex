@@ -6,9 +6,9 @@
 \label{sec:final_project_design}
 
 The final design of the measurement system contains two PID controllers, one for
-tempurature as shown in the previous section, and a second for pressure
+temperature as shown in the previous section, and a second for pressure
 measurement. The final diagram is shown in \figref{finalDiagram}. The output
-from the pressure and tempurature are used to calculate a prediction of the
+from the pressure and temperature are used to calculate a prediction of the
 fluid flow rate (per \eqref{flowRate}) in the pipe.
 
 \begin{figure}[h]
@@ -21,11 +21,11 @@ fluid flow rate (per \eqref{flowRate}) in the pipe.
 
 A sample of the front panel during operation is shown in \figref{frontPanel}.
 There are two things to notice about the sample plot. First, the smoothing of
-the noised inputs for the system. While both tempurature and pressure sensor
-inputs show a busy signal with lots of noise the filters from the noise-filter
+the noisy inputs for the system. While both temperature and pressure sensor
+inputs show a busy signal with lots of noise, the filters from the noise-filter
 diagrams produce a final smooth curve that is useful for analysis. Second, the
-response behaves as expected. The curve in the middle is indeed behaving as
-mathematically expected: below pressure and above the tempurature plots.
+response behaves as expected; the curve in the middle of the plot is indeed 
+behaving as mathematically expected: below pressure and above the temperature plots.
 
 \begin{figure}[h]
 	\begin{center}
