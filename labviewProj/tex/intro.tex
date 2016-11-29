@@ -14,16 +14,17 @@ controller's to achieve some desired output.
 
 Because time was limited, the reader should note that the models for this
 project are not realistic and were created for the sake of showing the use of
-\Labview in control modeling. Thus, we use the word ''model`` in the most
-non-realistic sense. Our model will be to predict the flow rate of a fluid
-through a pipe by controlling the tempurature and pressure independently. Our
-flow rate is modelled as follows: 
+\Labview in control modeling. Our control model will predict the flow rate of a
+fluid through a pipe by controlling the tempurature and pressure independently.
+Our flow rate is modelled as follows: 
 
 \begin{align}
 	Q &= 0.6T+0.4P \label{eq:flowRate}
 \end{align}
 where $Q$ is the flow rate, $T$ is the tempurature, and $P$ is the pressure of
-the fluid.
+the fluid. Note that the tempurature readings will have more weight on the
+calculated flow rate than the pressure. Therefore we will expect the flow rate
+plot to be placed below the pressure plot but above the temperature plot.
 
 To make the controllers simple to design we use third order systems for
 tempurature and pressure:

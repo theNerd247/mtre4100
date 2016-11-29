@@ -19,6 +19,7 @@ set(includeList
 	"tex"
 	"sty"
 	"img"
+	"img/reportImages"
 	)
 
 SetupLaTexBuildEnv (

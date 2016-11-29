@@ -6,25 +6,92 @@
 \label{sec:labview_vi}
 
 To begin building the labview module we first design our PID controllers. We use
-the PID controller block and the transfer function to generate the block
-diagrams:
+the PID controller block and the transfer function (who's configuration is shown
+in \figref{pidParams}) to generate the block diagrams:
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\begin{center}
-		\includegraphics[width=\linewidth]{pidController1.png}
+		\includegraphics[width=\linewidth]{pidController.png}
 	\end{center}
-	\caption{}
-	\label{fig:}
+	\caption{Basic PID controller with plant model}
+	\label{fig:pidController}
 \end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{pidParams.png}
+	\end{center}
+	\caption{Transfer Function model configuration}
+	\label{fig:pidParams}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{pidConsts.png}
+	\end{center}
+	\caption{PID Controller with PID Constants UI For Tuning}
+	\label{fig:pidConsts}
+\end{figure}
+
 
 Notice the feedback from the transfer function goes directly into the PID
 controller. This is the normal mode of operation for our controller. Later we
-will add a sub-diagram to generate signal noise and perform our filtering. The
-set point is a user-interface (or UI) input.
+will add a sub-diagram to generate signal noise and perform signal filtering. The
+set point is a user-interface (or UI) input to allow the user to control the
+input signal; making the simulation a bit more realistic.
 
 Next we create a block to generate the PID controller tuning parameters. We use
 a series of UI inputs to make tuning the controller easier later on.
 
+To tune the PID controller we start with $P=1, I=0, D=0$ and simulate a step
+response (see \figref{pidTune1}).  Next we adjust $P$ such that there is a bit
+of overshoot in the step response. Finally we use $I$ and $D$ to level out the
+overshoot and make the step response closer to being critically damped (while
+still maintaining an under-damped response). The resulting response is shown in
+\figref{pidTune2} with $P=10, I=10, D=0.001$.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{pidTune1.png}
+	\end{center}
+	\caption{Initial System Step Response}
+	\label{fig:pidTune1}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{pidTune2.png}
+	\end{center}
+	\caption{Final System Step Response}
+	\label{fig:pidTune2}
+\end{figure}
+
+After tuning the PID controller to have an under-damped response we then add
+noise to the output response to simulate vibrations in the sensors. To do this
+we had a sub-diagram which add noise to the incoming signal and runs it through
+a Butterworth-filter to obtain a clean sensor signal. We connect the output from
+our plant model to the input of the noise-filter diagram and the output to the
+process variable of the PID controller as shown in \figref{noise1}.
+
+The noise-filter diagram is shown in \figref{noise2}. Gaussian white noise is
+generated and then filtered by a low-pass filter ($10\dem{Hz}$). The filtered
+noise is then added to the incoming signal to simulate real-world modulation.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{noise1.png}
+	\end{center}
+	\caption{PID Controller with Noise-Filter Sub-Diagram}
+	\label{fig:noise1}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\linewidth]{noise2.png}
+	\end{center}
+	\caption{Noise-Filter Diagram}
+	\label{fig:noise2}
+\end{figure}
 
 % section labview_vi (end)
 
