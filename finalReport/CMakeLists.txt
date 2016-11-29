@@ -4,7 +4,7 @@ cmake_policy(SET CMP0011 NEW)
 
 include(LaTeXBuild)
 
-project("lab2")
+project("finalReport")
 
 set(mainTexFile "main.tex")
 
@@ -12,10 +12,11 @@ set(texDir "tex")
 set(styDir "sty")
 set(imgDir "img")
 
-make_directory("${CMAKE_CURRENT_SOURCE_DIR}/img")
-
-set(subProjects "util")
-#set(styleFiles "")
+#set(subProjects "")
+set(styleFiles 
+	"sty/finalReportCmds.sty"
+	"sty/finalReportStyle.sty"
+	)
 
 set(includeList 
 	"tex"

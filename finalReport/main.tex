@@ -1,0 +1,40 @@
+\documentclass[a4paper,titlepage]{IEEEtran}
+
+% DO NOT REMOVE!
+\usepackage{subfiles}
+
+%include the packages and styles to use
+%\usepackage{package_name}
+\usepackage{finalReport}
+
+\begin{document}
+
+\title{Applications of Sample Based Model Predictive Control in Industrial
+	Robotic Settings}
+\author{
+	Noah Harvey, Joseph Burley
+}
+% Date is automagically included (see Latex documentation)
+\maketitle
+
+\begin{abstract}
+
+	Today many Industrial systems are controlled using feedback-loop based
+	controls; commonly, the PID and state-space controllers. There are draw-backs
+	however as PID controllers tend to be difficult and error prone in tuning and
+	optimizing.  Novel approaches to control systems have been made in recent
+	years which incoorporate sample-based path finding algorithms (typically the
+	A$^{*}$) with model predictive controllers (MPC). We discuss the applications
+	of sample based MPCs in industrial robotic applications.
+
+\end{abstract}
+
+% other sections of the document goes here
+\subfile{intro}
+\subfile{sbmpc}
+\subfile{applications}
+\subfile{conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,finalReport}
+\end{document}

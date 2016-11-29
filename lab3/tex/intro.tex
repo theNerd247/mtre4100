@@ -1,0 +1,30 @@
+\documentclass[a4paper,titlepage]{article}
+\begin{document}
+\section{Simulation of Generated Sampling Frequencies}
+The experiment started with simulations using LabVIEW. The simulation
+consisted simply of a single function generation block. The block was set to
+generate a sine wave at 100 Hz, sampled at 80 Hz. \figref{part1_1}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{part1_1}
+	\end{center}
+	\caption{Simulated Signal With Sampling Rate of $80\dem{Hz}$}
+	\label{fig:part1_1}
+\end{figure}
+
+The sample rate was then adjusted to $200\dem{Hz}$ to show how sample rate
+affects how the resulting signal appears. Notice that in \figref{part1_2} the
+signal appears while in \figref{part1_1} it does not. This is due to \Labview
+having a fail-safe where it will not generate a signal that cannot be properly
+sampled. Next we will investigate why this is in place.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=\linewidth]{part1_2}
+	\end{center}
+	\caption{Simulated Signal With Sampling Rate of $200\dem{Hz}$}
+	\label{fig:part1_2}
+\end{figure}
+
+\end{document}
