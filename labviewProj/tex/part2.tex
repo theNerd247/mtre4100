@@ -19,6 +19,40 @@ fluid flow rate (per \eqref{flowRate}) in the pipe.
 	\label{fig:finalDiagram}
 \end{figure}
 
+The transfer functions for the final simulation are as shown in \tabref{coeffs}.
+And the PID values are shown in \tabref{pids}. Both PID controllers are
+connected to a noise-filter which filters the simulated noise at $10\dem{Hz}$.
+
+\begin{table}[H]
+  \begin{center}
+		\caption{Transfer Function Coefficients According \eqref{plantModel}}
+    \label{tab:coeffs}
+    \begin{tabular}{llll}
+      \\ \toprule
+			  i & 2 & 1 & 0
+      \\ \midrule
+			  $a_i$ & $5$ & $3$ & $2$
+			\\$b_i$ & $1$ & $1$ & $0.01$
+      \\ \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[H]
+  \begin{center}
+    \caption{PID constants For Both Pressure and Tempurature Model}
+    \label{tab:pids}
+    \begin{tabular}{llll}
+      \\ \toprule
+			& P & I & D
+      \\ \midrule
+			Tempurature & 10 & 10 & 0.001
+			\\Pressure & 2 & 1 & 0.001
+      \\ \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
 A sample of the front panel during operation is shown in \figref{frontPanel}.
 There are two things to notice about the sample plot. First, the smoothing of
 the noisy inputs for the system. While both temperature and pressure sensor
@@ -34,6 +68,7 @@ behaving as mathematically expected: below pressure and above the temperature pl
 	\caption{Sample Front Panel During Operation}
 	\label{fig:frontPanel}
 \end{figure}
+
 
 % section final_project_design (end)
 
